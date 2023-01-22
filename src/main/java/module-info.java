@@ -1,6 +1,7 @@
 module com.example.projekat {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
 
 
     opens com.example.projekat to javafx.fxml;
