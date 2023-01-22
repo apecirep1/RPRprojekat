@@ -13,7 +13,7 @@ public class HotelDAO {
         return instance;
     }
 
-    private GeografijaDAO() {
+    private HotelDAO() {
         try {
             conn = DriverManager.getConnection("jdbc:sqlite:mydb.db");
         } catch (SQLException e) {
