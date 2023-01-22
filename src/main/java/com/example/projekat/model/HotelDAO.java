@@ -12,4 +12,13 @@ public class HotelDAO {
         if (instance == null) instance = new HotelDAO();
         return instance;
     }
+
+    private GeografijaDAO() {
+        try {
+            conn = DriverManager.getConnection("jdbc:sqlite:mydb.db");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
