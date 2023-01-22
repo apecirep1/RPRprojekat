@@ -21,6 +21,12 @@ public class HotelDAO {
         }
     }
 
+    public static void removeInstance() {
+        if (instance == null) return;
+        instance.close();
+        instance = null;
+    }
+
     public void close() {
         try {
             conn.close();
