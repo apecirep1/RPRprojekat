@@ -11,7 +11,7 @@ public class HotelDAO {
     private PreparedStatement getGuestQuery, deleteGuestQuery, getReservationQuery, deleteReservationQuery,
             getWorkerQuery, deleteWorkerQuery, getcityForGuestQuery, getCountryForGuestQuery, getNumberOfIdForGuestQuery,
             getDateOfArrivalQuery, getDepartureDateQuery, getRoomTypeQuery, getRoomNumberQuery, getPricePerNightQuery,
-            getTypeOfWorkQuery, addReservationQuery;
+            getTypeOfWorkQuery, addReservationQuery, addGuestQuery, addWorkerQuery;
 
     public static HotelDAO getInstance() {
         if (instance == null) instance = new HotelDAO();
@@ -42,6 +42,9 @@ public class HotelDAO {
             getPricePerNightQuery = conn.prepareStatement("SELECT rezervacije.cijenaNocenja FROM rezervacije WHERE imeRezervacije=?");
 
             addReservationQuery = conn.prepareStatement("INSERT INTO rezervacije VALUES(?,?,?,?,?,?)");
+            addGuestQuery = conn.prepareStatement("INSERT INTO gosti VALUES(?,?,?,?,?)");
+            //(addWorkerQuery = conn.prepareStatement("INSERT INTO gosti VALUES(?,?,?)");
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
