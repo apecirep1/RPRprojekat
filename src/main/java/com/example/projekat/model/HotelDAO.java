@@ -134,6 +134,21 @@ public class HotelDAO {
             e.printStackTrace();
         }
     }
+
+    public void addReservation(Reservation reservation){
+        try {
+            addReservationQuery.setString(1, reservation.getDateOfArrival());
+            addReservationQuery.setString(2, reservation.getDepartureDate());
+            addReservationQuery.setString(3, reservation.getReservationName());
+            addReservationQuery.setString(4, reservation.getRoomType());
+            addReservationQuery.setInt(5, reservation.getRoomNumber());
+            addReservationQuery.setInt(6, reservation.getPricePerNight());
+            addReservationQuery.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
     public void changeReservation(Reservation reservation) {
         try {
             changeReservationQuery.setString(1, reservation.getDateOfArrival());
