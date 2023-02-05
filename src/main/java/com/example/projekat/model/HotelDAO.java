@@ -191,6 +191,19 @@ public class HotelDAO {
 
     }
 
+    private Reservation getReservation(String name) {
+        try {
+            getReservationQuery.setString(1, name);
+            ResultSet rs = getReservationQuery.executeQuery();
+            if (!rs.next()) return null;
+            return getReservationFromResultSet(rs);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+    }
+
 
 
 }
