@@ -8,6 +8,11 @@ public class HotelDAO {
     private static HotelDAO instance;
     private Connection conn;
 
+    private PreparedStatement getGuestQuery, deleteGuestQuery, getReservationQuery, deleteReservationQuery,
+            getWorkerQuery, deleteWorkerQuery, getcityForGuestQuery, getCountryForGuestQuery, getNumberOfIdForGuestQuery,
+            getDateOfArrivalQuery, getDepartureDateQuery, getRoomTypeQuery, getRoomNumberQuery, getPricePerNightQuery,
+            getTypeOfWorkQuery;
+
     public static HotelDAO getInstance() {
         if (instance == null) instance = new HotelDAO();
         return instance;
