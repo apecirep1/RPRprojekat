@@ -44,7 +44,7 @@ public class HotelDAO {
 
             addReservationQuery = conn.prepareStatement("INSERT INTO rezervacije VALUES(?,?,?,?,?,?)");
             addGuestQuery = conn.prepareStatement("INSERT INTO gosti VALUES(?,?,?,?,?)");
-            addWorkerQuery = conn.prepareStatement("INSERT INTO gosti VALUES(?,?,?)");
+            addWorkerQuery = conn.prepareStatement("INSERT INTO radnici VALUES(?,?,?)");
 
             changeReservationQuery =conn.prepareStatement("UPDATE rezervacije SET datumDolaska=?, datumOdlaska=?, imeRezervacije=?, vrstaSobe=?, brojSobe=?, cijenaNocenja=? WHERE imeRezervacije=?");
         } catch (SQLException e) {
@@ -103,6 +103,18 @@ public class HotelDAO {
         try {
             deleteReservationQuery.setString(1, reservation.getReservationName());
             deleteReservationQuery.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public void addWorker(Worker worker) {
+        try {
+
+            addWorkerQuery.setString(1, worker.getName());
+            addWorkerQuery.setString(2, worker.getLastName());
+            addWorkerQuery.setString(3, worker.getTypeOfWork());
+            addWorkerQuery.executeUpdate();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
