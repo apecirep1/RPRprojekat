@@ -35,8 +35,10 @@ public class HotelDAO {
             getcityForGuestQuery = conn.prepareStatement("SELECT gosti.grad FROM gosti WHERE ime=?");
             getCountryForGuestQuery = conn.prepareStatement("SELECT gosti.drzava FROM gosti WHERE ime=?");
             getNumberOfIdForGuestQuery = conn.prepareStatement("SELECT gosti.brojLicneKarte FROM gosti WHERE ime=?");
-            getDateOfArrivalQuery = conn.prepareStatement("SELECT rezervacije.datumDolaska FROM rezervacije WHERE ime=?");
-            getDepartureDateQuery = conn.prepareStatement("SELECT rezervacije.datumOdlaska FROM rezervacije WHERE ime=?");
+            getDateOfArrivalQuery = conn.prepareStatement("SELECT rezervacije.datumDolaska FROM rezervacije WHERE imeRezervacije=?");
+            getDepartureDateQuery = conn.prepareStatement("SELECT rezervacije.datumOdlaska FROM rezervacije WHERE imeRezervacije=?");
+            getRoomTypeQuery = conn.prepareStatement("SELECT rezervacije.vrstaSobe FROM rezervacije WHERE imeRezervacije=?");
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
