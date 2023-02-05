@@ -43,7 +43,7 @@ public class HotelDAO {
 
             addReservationQuery = conn.prepareStatement("INSERT INTO rezervacije VALUES(?,?,?,?,?,?)");
             addGuestQuery = conn.prepareStatement("INSERT INTO gosti VALUES(?,?,?,?,?)");
-            //(addWorkerQuery = conn.prepareStatement("INSERT INTO gosti VALUES(?,?,?)");
+            addWorkerQuery = conn.prepareStatement("INSERT INTO gosti VALUES(?,?,?)");
 
         } catch (SQLException e) {
             e.printStackTrace();
