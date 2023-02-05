@@ -90,4 +90,14 @@ public class HotelDAO {
         }
     }
 
+    public void deleteGuest(Guest guest) {
+        try {
+            deleteGuestQuery.setString(1, guest.getName());
+            deleteGuestQuery.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
