@@ -33,7 +33,7 @@ public class HotelDAO {
             getWorkerQuery = conn.prepareStatement("SELECT * FROM radnici WHERE ime=?");
             deleteWorkerQuery = conn.prepareStatement("DELETE FROM radnici WHERE ime=?");
             getcityForGuestQuery = conn.prepareStatement("SELECT gosti.grad FROM gosti WHERE ime=?");
-
+            getCountryForGuestQuery = conn.prepareStatement("SELECT gosti.drzava FROM gosti WHERE ime=?");
 
         } catch (SQLException e) {
             e.printStackTrace();
