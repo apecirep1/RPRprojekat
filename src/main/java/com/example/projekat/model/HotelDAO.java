@@ -178,4 +178,19 @@ public class HotelDAO {
 
     }
 
+    private Guest getGuest(String name) {
+        try {
+            getGuestQuery.setString(1, name);
+            ResultSet rs = getGuestQuery.executeQuery();
+            if (!rs.next()) return null;
+            return getGuestFromResultSet(rs);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+    }
+
+
+
 }
