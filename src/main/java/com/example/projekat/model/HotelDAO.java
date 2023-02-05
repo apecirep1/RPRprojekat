@@ -71,4 +71,9 @@ public class HotelDAO {
         return guest;
     }
 
+    private Worker getWorkerFromResultSet(ResultSet rs) throws SQLException {
+        Worker worker = new Worker(rs.getString(1), rs.getString(2), rs.getString(3));
+        return worker;
+    }
+
 }
