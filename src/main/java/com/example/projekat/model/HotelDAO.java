@@ -24,6 +24,13 @@ public class HotelDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        try {
+            getGuestQuery = conn.prepareStatement("SELECT * FROM gosti WHERE name=?");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void removeInstance() {
