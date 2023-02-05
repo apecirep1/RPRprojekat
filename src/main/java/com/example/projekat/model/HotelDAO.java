@@ -119,6 +119,21 @@ public class HotelDAO {
             e.printStackTrace();
         }
     }
+
+    public void addGuest(Guest guest) {
+        try {
+
+            addGuestQuery.setString(1, guest.getName());
+            addGuestQuery.setString(2, guest.getLastName());
+            addGuestQuery.setString(3, guest.getCity());
+            addGuestQuery.setString(4, guest.getCountry());
+            addGuestQuery.setString(5, guest.getNumberOfID());
+            addGuestQuery.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
     public void changeReservation(Reservation reservation) {
         try {
             changeReservationQuery.setString(1, reservation.getDateOfArrival());
