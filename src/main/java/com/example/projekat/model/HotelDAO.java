@@ -165,4 +165,17 @@ public class HotelDAO {
         }
     }
 
+    private Worker getWorker(String name) {
+        try {
+            getWorkerQuery.setString(1, name);
+            ResultSet rs = getWorkerQuery.executeQuery();
+            if (!rs.next()) return null;
+            return getWorkerFromResultSet(rs);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+    }
+
 }
