@@ -28,8 +28,8 @@ public class HotelDAO {
         try {
             getGuestQuery = conn.prepareStatement("SELECT * FROM gosti WHERE ime=?");
             deleteGuestQuery = conn.prepareStatement("DELETE FROM gosti WHERE ime=?");
-            getReservationQuery = conn.prepareStatement("SELECT * FROM rezervacije WHERE ime=?");
-            deleteReservationQuery = conn.prepareStatement("DELETE FROM rezervacije WHERE ime=?");
+            getReservationQuery = conn.prepareStatement("SELECT * FROM rezervacije WHERE imeRezervacije=?");
+            deleteReservationQuery = conn.prepareStatement("DELETE FROM rezervacije WHERE imeRezervacije=?");
             getWorkerQuery = conn.prepareStatement("SELECT * FROM radnici WHERE ime=?");
             deleteWorkerQuery = conn.prepareStatement("DELETE FROM radnici WHERE ime=?");
             getcityForGuestQuery = conn.prepareStatement("SELECT gosti.grad FROM gosti WHERE ime=?");
@@ -94,6 +94,15 @@ public class HotelDAO {
         try {
             deleteGuestQuery.setString(1, guest.getName());
             deleteGuestQuery.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteReservation(Reservation reservation) {
+        try {
+            deleteReservationQuery.setString(1, reservation.getReservationName());
+            deleteReservationQuery.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
