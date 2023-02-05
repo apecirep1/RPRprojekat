@@ -40,6 +40,7 @@ public class HotelDAO {
             getRoomTypeQuery = conn.prepareStatement("SELECT rezervacije.vrstaSobe FROM rezervacije WHERE imeRezervacije=?");
             getRoomNumberQuery = conn.prepareStatement("SELECT rezervacije.brojSobe FROM rezervacije WHERE imeRezervacije=?");
             getPricePerNightQuery = conn.prepareStatement("SELECT rezervacije.cijenaNocenja FROM rezervacije WHERE imeRezervacije=?");
+            getTypeOfWorkQuery = conn.prepareStatement("SELECT radnici.vrstaPosla FROM radnici WHERE ime=?");
 
             addReservationQuery = conn.prepareStatement("INSERT INTO rezervacije VALUES(?,?,?,?,?,?)");
             addGuestQuery = conn.prepareStatement("INSERT INTO gosti VALUES(?,?,?,?,?)");
