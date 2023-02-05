@@ -26,10 +26,11 @@ public class HotelDAO {
         }
 
         try {
-            getGuestQuery = conn.prepareStatement("SELECT * FROM gosti WHERE name=?");
-            deleteGuestQuery = conn.prepareStatement("DELETE FROM gosti WHERE name=?");
-            getReservationQuery = conn.prepareStatement("SELECT * FROM rezervacije WHERE name=?");
-            deleteReservationQuery = conn.prepareStatement("DELETE FROM rezervacije WHERE name=?");
+            getGuestQuery = conn.prepareStatement("SELECT * FROM gosti WHERE ime=?");
+            deleteGuestQuery = conn.prepareStatement("DELETE FROM gosti WHERE ime=?");
+            getReservationQuery = conn.prepareStatement("SELECT * FROM rezervacije WHERE ime=?");
+            deleteReservationQuery = conn.prepareStatement("DELETE FROM rezervacije WHERE ime=?");
+            getWorkerQuery = conn.prepareStatement("SELECT * FROM radnici WHERE ime=?");
 
 
 
