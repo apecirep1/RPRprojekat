@@ -81,4 +81,13 @@ public class HotelDAO {
         return reservation;
     }
 
+    public void deleteWorker(Worker worker) {
+        try {
+            deleteWorkerQuery.setString(1, worker.getName());
+            deleteWorkerQuery.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
