@@ -11,7 +11,7 @@ public class HotelDAO {
     private PreparedStatement getGuestQuery, deleteGuestQuery, getReservationQuery, deleteReservationQuery,
             getWorkerQuery, deleteWorkerQuery, getcityForGuestQuery, getCountryForGuestQuery, getNumberOfIdForGuestQuery,
             getDateOfArrivalQuery, getDepartureDateQuery, getRoomTypeQuery, getRoomNumberQuery, getPricePerNightQuery,
-            getTypeOfWorkQuery, addReservationQuery, addGuestQuery, addWorkerQuery;
+            getTypeOfWorkQuery, addReservationQuery, addGuestQuery, addWorkerQuery, changeReservationQuery;
 
     public static HotelDAO getInstance() {
         if (instance == null) instance = new HotelDAO();
@@ -46,6 +46,7 @@ public class HotelDAO {
             addGuestQuery = conn.prepareStatement("INSERT INTO gosti VALUES(?,?,?,?,?)");
             addWorkerQuery = conn.prepareStatement("INSERT INTO gosti VALUES(?,?,?)");
 
+            changeReservationQuery =conn.prepareStatement("UPDATE rezervacije SET datumDolaska=?, datumOdlaska=?, imeRezervacije=?, vrstaSobe=?, brojSobe=?, cijenaNocenja=? WHERE imeRezervacije=?");
         } catch (SQLException e) {
             e.printStackTrace();
         }
