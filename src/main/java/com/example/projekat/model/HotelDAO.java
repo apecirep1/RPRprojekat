@@ -36,7 +36,7 @@ public class HotelDAO {
             getCountryForGuestQuery = conn.prepareStatement("SELECT gosti.drzava FROM gosti WHERE ime=?");
             getNumberOfIdForGuestQuery = conn.prepareStatement("SELECT gosti.brojLicneKarte FROM gosti WHERE ime=?");
             getDateOfArrivalQuery = conn.prepareStatement("SELECT rezervacije.datumDolaska FROM rezervacije WHERE ime=?");
-
+            getDepartureDateQuery = conn.prepareStatement("SELECT rezervacije.datumOdlaska FROM rezervacije WHERE ime=?");
         } catch (SQLException e) {
             e.printStackTrace();
         }
