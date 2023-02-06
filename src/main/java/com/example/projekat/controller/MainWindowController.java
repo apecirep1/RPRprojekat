@@ -5,7 +5,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 
 
-public class mainWindowController {
+public class MainWindowController {
     public Button makeReservation;
     public Button deleteReservation;
     public Button changeReservation;
