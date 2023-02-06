@@ -56,7 +56,7 @@ public class MainWindowController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/makeReservation.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/makeReservation.fxml"));
             MakeReservationController makeReservationController = new MakeReservationController();
             loader.setController(makeReservationController);
             root = loader.load();
@@ -74,7 +74,7 @@ public class MainWindowController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/deleteReservation.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/deleteReservation.fxml"));
             DeleteReservationController deleteReservationController = new DeleteReservationController();
             loader.setController(deleteReservationController);
             root = loader.load();
@@ -92,7 +92,7 @@ public class MainWindowController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/changeReservation.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/changeReservation.fxml"));
             ChangeReservationController changeReservationController = new ChangeReservationController();
             loader.setController(changeReservationController);
             root = loader.load();
@@ -110,7 +110,7 @@ public class MainWindowController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/searchReservation.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/searchReservation.fxml"));
             SearchReservationController searchReservationController = new SearchReservationController();
             loader.setController(searchReservationController);
             root = loader.load();
@@ -128,7 +128,7 @@ public class MainWindowController {
         Stage stage = new Stage();
         Parent root = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/exitForm.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/exitForm.fxml"));
             ExitFormController exitFormController = new ExitFormController();
             loader.setController(exitFormController);
             root = loader.load();
@@ -147,7 +147,7 @@ public class MainWindowController {
         Parent root = null;
         if(addWorker.isSelected()){
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/addWorker.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/addWorker.fxml"));
                 AddWorkerController addWorkerController = new AddWorkerController();
                 loader.setController(addWorkerController);
                 root = loader.load();
@@ -161,7 +161,7 @@ public class MainWindowController {
             }
         }else{
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/deleteWorker.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/deleteWorker.fxml"));
                 DeleteWorkerController deleteWorkerController = new DeleteWorkerController();
                 loader.setController(deleteWorkerController);
                 root = loader.load();
