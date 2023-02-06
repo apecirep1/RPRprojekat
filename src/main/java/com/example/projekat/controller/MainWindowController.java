@@ -43,4 +43,22 @@ public class MainWindowController {
             e.printStackTrace();
         }
     }
+
+    public void actionDeleteReservation(ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        Parent root = null;
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/deleteReservation.fxml"));
+            DeleteReservationController deleteReservationController = new DeleteReservationController();
+            loader.setController(deleteReservationController);
+            root = loader.load();
+            stage.setTitle("Delete Reservation");
+            stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.setResizable(false);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
