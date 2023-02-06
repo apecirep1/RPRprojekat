@@ -14,8 +14,6 @@ public class MainWindowController {
     public TextField fieldSearch;
     public Button search;
 
-
-
-
-
+    public MainWindowController() {
+    }
 }
