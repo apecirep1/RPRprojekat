@@ -80,4 +80,22 @@ public class MainWindowController {
         }
     }
 
+    public void actionSearch(ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        Parent root = null;
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/searchReservation.fxml"));
+            SearchReservationController searchReservationController = new SearchReservationController();
+            loader.setController(searchReservationController);
+            root = loader.load();
+            stage.setTitle("Search Reservation");
+            stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.setResizable(false);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
