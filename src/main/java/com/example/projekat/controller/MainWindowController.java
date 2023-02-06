@@ -61,4 +61,23 @@ public class MainWindowController {
             e.printStackTrace();
         }
     }
+
+    public void actionChangeReservation(ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        Parent root = null;
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/changeReservation.fxml"));
+            ChangeReservationController changeReservationController = new ChangeReservationController();
+            loader.setController(changeReservationController);
+            root = loader.load();
+            stage.setTitle("Change Reservation");
+            stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.setResizable(false);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
