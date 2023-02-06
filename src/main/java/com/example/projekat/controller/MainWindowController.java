@@ -98,4 +98,22 @@ public class MainWindowController {
         }
     }
 
+    public void actionExit(ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        Parent root = null;
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/exitForm.fxml"));
+            ExitFormController exitFormController = new ExitFormController();
+            loader.setController(exitFormController);
+            root = loader.load();
+            stage.setTitle("Exit");
+            stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.setResizable(false);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
