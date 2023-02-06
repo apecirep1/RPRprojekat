@@ -1,12 +1,16 @@
 package com.example.projekat.controller;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -22,8 +26,30 @@ public class MainWindowController {
     public ChoiceBox moreOptions;
     public TextField fieldSearch;
     public Button search;
+    public Button pict;
+    public RadioButton addWorker;
+    public RadioButton deleteWorker;
+    public Button ok;
 
     public MainWindowController() {
+    }
+
+
+    @FXML
+    public void initialize(){
+        Image img1 = new Image("/pictures/hotel.png");
+        ImageView view1 = new ImageView(img1);
+        view1.setFitHeight(159);
+        view1.setFitWidth(232);
+        pict.setGraphic(view1);
+
+        if(addWorker.isSelected()){
+            deleteWorker.setSelected(false);
+        }
+
+        if(deleteWorker.isSelected()){
+            addWorker.setSelected(false);
+        }
     }
 
     public void actionMakeReservation(ActionEvent actionEvent) {
@@ -113,6 +139,40 @@ public class MainWindowController {
 
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void actionOk(ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        Parent root = null;
+        if(addWorker.isSelected()){
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/addWorker.fxml"));
+                AddWorkerController addWorkerController = new AddWorkerController();
+                loader.setController(addWorkerController);
+                root = loader.load();
+                stage.setTitle("Add Worker");
+                stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+                stage.setResizable(false);
+                stage.show();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else{
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/deleteWorker.fxml"));
+                DeleteWorkerController deleteWorkerController = new DeleteWorkerController();
+                loader.setController(deleteWorkerController);
+                root = loader.load();
+                stage.setTitle("Delete Worker");
+                stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+                stage.setResizable(false);
+                stage.show();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
